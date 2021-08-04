@@ -25,7 +25,7 @@ data_neighbours = pd.DataFrame(index=data_ibs.columns,columns=[range(1,11)])
 
 # Loop through our similarity dataframe and fill in neighbouring item names
 for i in range(0,len(data_ibs.columns)):
-    data_neighbours.iloc[i,:10] = data_ibs.iloc[0:,i].order(ascending=False)[:10].index
+    data_neighbours.iloc[i,:10] = data_ibs.iloc[0:,i].sort_values(ascending=False)[:10].index
 
 # --- End Item Based Recommendations --- #
 
